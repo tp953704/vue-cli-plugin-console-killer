@@ -19,7 +19,7 @@ yarn global add @vue/cli
 vue create hello-world
 ```
 
-### then After develop..., maybe there is a lot of extra coding like =>'console.log'. You can install vue-cli-plugin-console-killer to kill them all.
+### Then -- After develop..., maybe there is a lot of extra coding like =>'console.log'. You can install vue-cli-plugin-console-killer to kill them all.
 
 
 3. install 
