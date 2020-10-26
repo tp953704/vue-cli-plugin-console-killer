@@ -35,3 +35,5 @@ vue invoke vue-cli-plugin-console-killer
 //and you can run 
 npm run console-kill
 ```
+
+[npmlink](https://www.npmjs.com/package/vue-cli-plugin-console-killer)
