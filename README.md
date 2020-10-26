@@ -30,7 +30,7 @@ You can install vue-cli-plugin-console-killer to kill them all.
 npm i vue-cli-plugin-console-killer -D
 ```
 
-4.and you invoke and lets killer console
+4.  invoke and lets killer console
 ```javascript
 vue invoke vue-cli-plugin-console-killer
 
