@@ -3,7 +3,7 @@ module.exports = (api, options, rootOptions) => {
     // let rxLines = `\nimport VueRx from 'vue-rx';\n\nVue.use(VueRx);`;
     api.extendPackage({
       "scripts": {
-        "console-kill": "vue-cli-service console-kill"
+        "console-killer": "vue-cli-service console-killer"
       },
     });
     // api.onCreateComplete(() => {
