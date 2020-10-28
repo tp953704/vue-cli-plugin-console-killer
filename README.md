@@ -37,5 +37,6 @@ vue invoke vue-cli-plugin-console-killer
 //and you can run 
 npm run console-kill
 ```
+### final --All of the console (ex: console.log(), console.dir()...) will killed
 
 [npmlink](https://www.npmjs.com/package/vue-cli-plugin-console-killer)
