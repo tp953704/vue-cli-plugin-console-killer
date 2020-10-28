@@ -1,6 +1,9 @@
 # vue-cli-plugin-console-killer
 vue-cli plugin to kill console like cockroach
 
+## important 
+Error have been Fixed, you can use it safety and confortable. 
+if there is demand you need, or you meet some error when using this package Lets go to (https://github.com/tp953704/vue-cli-plugin-console-killer/issues), Thank you
 
 ## Get Start
 
