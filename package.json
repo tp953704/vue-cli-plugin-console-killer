@@ -11,7 +11,9 @@
   "devDependencies": {
     "@tp953704/babel-plugin-console-killer": "^1.0.3",
     "babel-core": "^6.26.3",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0"
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
   },
   "dependencies": {}
 }

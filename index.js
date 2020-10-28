@@ -3,22 +3,26 @@ const pathLib = require('path');
 const babel = require("babel-core");
 const consoleKiller = require('@tp953704/babel-plugin-console-killer');
 const dynamicImport = require("babel-plugin-syntax-dynamic-import");
+const rest = require("babel-plugin-transform-object-rest-spread")
 const isDirectory = (path) => {
   return fs.statSync(path).isDirectory();
 }
 const VueTranfrom = (contentMain,path) => {
   const startIndex = contentMain.indexOf('<script>')+'<script>'.length;
   const endIndex = contentMain.indexOf('</script>');
-  if(startIndex>endIndex ) return;
+  if(startIndex > endIndex ) return;
   const JsMain = contentMain.substring(startIndex,endIndex);
-  JsTranfrom(JsMain,path);
+  const top = contentMain.substring(0,startIndex);
+  const down = contentMain.substring(endIndex,contentMain.length);
+  JsTranfrom(JsMain,path,top,down);
 }
-const JsTranfrom = (JsMain,path) => {
+const JsTranfrom = (JsMain,path,top="",down="") => {
   const out = babel.transform(JsMain, {
     presets:[  ],
-    plugins: [consoleKiller,dynamicImport]
+    plugins: [consoleKiller,dynamicImport,rest]
   });
-  fs.writeFile(path,out.code,function(err,result){
+  const fullCode = top + out.code + down;
+  fs.writeFile(path,fullCode,function(err,result){
     if(err) return ;
     console.log(`${path}___編譯完成`)
   })
