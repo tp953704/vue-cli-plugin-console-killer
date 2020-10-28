@@ -8,7 +8,7 @@ const isDirectory = (path) => {
   return fs.statSync(path).isDirectory();
 }
 const VueTranfrom = (contentMain,path) => {
-  const startIndex = contentMain.indexOf('<script>')+'<script>'.length;
+  const startIndex = contentMain.indexOf('export default');
   const endIndex = contentMain.indexOf('</script>');
   if(startIndex > endIndex ) return;
   const JsMain = contentMain.substring(startIndex,endIndex);
@@ -17,13 +17,18 @@ const VueTranfrom = (contentMain,path) => {
   JsTranfrom(JsMain,path,top,down);
 }
 const JsTranfrom = (JsMain,path,top="",down="") => {
+  console.log(JsMain)
   const out = babel.transform(JsMain, {
     presets:[  ],
     plugins: [consoleKiller,dynamicImport,rest]
   });
   const fullCode = top + out.code + down;
+  console.log(fullCode)
   fs.writeFile(path,fullCode,function(err,result){
-    if(err) return ;
+    if(err) {
+      console.log(path+'失敗')
+      return ;
+    }
     console.log(`${path}___編譯完成`)
   })
 }
@@ -33,7 +38,7 @@ const Traverse = (path) => {
     if(path.indexOf('.vue') > -1){
       VueTranfrom(contentMain,path)
     }
-    if(path.indexOf('.js') > -1){
+    if(path.indexOf('.js') > -1 && path.indexOf('dist/') === -1 && path.indexOf('.json') === -1){
       JsTranfrom(contentMain,path)
     }
     return ;
@@ -42,6 +47,7 @@ const Traverse = (path) => {
     if(err) throw TypeError("error");
     files.forEach(file => {
       const subPath = path+'/'+file;
+      
       Traverse(subPath);
     });
   })
