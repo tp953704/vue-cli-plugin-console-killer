@@ -49,10 +49,10 @@ const Traverse = (path) => {
 
 module.exports = (api) => {
   api.registerCommand(
-    'console-kill',
+    'console-killer',
     {
       description: '殺光所有像蟑螂一樣的console.log',
-      usage: 'vue-cli-service console-kill'
+      usage: 'vue-cli-service console-killer'
     },
     () => {
       console.log("一起殺光這些像蟑螂一樣的console.log巴")
