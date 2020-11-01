@@ -1,4 +1,11 @@
 # vue-cli-plugin-console-killer
+
+<p >
+<img src="https://img.shields.io/npm/dw/vue-cli-plugin-console-killer" alt="vue-cli-plugin-console-killer|download">  
+<img src="https://img.shields.io/github/repo-size/tp953704/vue-cli-plugin-console-killer" alt="vue-cli-plugin-console-killer|size">  
+<img src="https://img.shields.io/npm/l/vue-cli-plugin-console-killer" alt="vue-cli-plugin-console-killer|MIT">      
+
+</p>
 vue-cli plugin to kill console like cockroach
 
 ## important 
