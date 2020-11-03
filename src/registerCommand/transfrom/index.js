@@ -11,8 +11,9 @@ const reWriteFile=(sCode,path)=>{
 }
 module.exports = (contentMain,path)=>{
     const stransCode = typeTransform(contentMain,path);
-    
-    reWriteFile(stransCode,path)
+    if(stransCode){
+        reWriteFile(stransCode,path)
+    }
 }
 
 
